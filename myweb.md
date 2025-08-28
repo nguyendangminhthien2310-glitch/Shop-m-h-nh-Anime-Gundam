@@ -67,7 +67,7 @@
       if(u === VALID_USER && p === VALID_PASS){
         msg.style.color = "#bfffcf"; msg.textContent = "Đăng nhập thành công — chuyển trang...";
         // chuyển sang trang đích (cùng thư mục)
-        setTimeout(()=> { window.location.href = "nguyendangminhthien.html"; }, 800);
+        setTimeout(()=> { window.location.href = "ShopmohinhAnimeGundam.html"; }, 800);
       } else {
         msg.style.color = "#ffbaba"; msg.textContent = "Sai tên đăng nhập hoặc mật khẩu.";
       }
