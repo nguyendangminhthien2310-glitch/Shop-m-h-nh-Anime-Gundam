@@ -35,34 +35,26 @@
   <div class="card" role="region" aria-label="Đăng nhập">
     <h2>Đăng nhập</h2>
     <p class="sub">Nhập tài khoản để chuyển đến <code>nguyendangminhthien.html</code></p>
-
     <label for="user" class="sr-only">Tên đăng nhập</label>
     <input id="user" type="text" placeholder="Tên đăng nhập" autocomplete="username">
-
     <label for="pass" class="sr-only">Mật khẩu</label>
     <input id="pass" type="password" placeholder="Mật khẩu" autocomplete="current-password">
-
     <button id="btn">Đăng nhập</button>
     <div id="msg" class="msg" aria-live="polite"></div>
-
     <div class="hint">Tài khoản demo: <strong>admin</strong> / <strong>123456</strong></div>
   </div>
-
   <script>
     // ✅ Tài khoản mặc định (chỉ demo phía client)
     const VALID_USER = "admin";
     const VALID_PASS = "123456";
-
     document.getElementById("btn").addEventListener("click", function(){
       const u = (document.getElementById("user").value || "").trim();
       const p = document.getElementById("pass").value || "";
       const msg = document.getElementById("msg");
-
       if(!u || !p){
         msg.style.color = "#ffbaba"; msg.textContent = "Vui lòng nhập đầy đủ thông tin.";
         return;
       }
-
       // chính xác phân biệt chữ hoa/thường
       if(u === VALID_USER && p === VALID_PASS){
         msg.style.color = "#bfffcf"; msg.textContent = "Đăng nhập thành công — chuyển trang...";
@@ -72,7 +64,6 @@
         msg.style.color = "#ffbaba"; msg.textContent = "Sai tên đăng nhập hoặc mật khẩu.";
       }
     });
-
     // cho phép Enter để submit
     document.addEventListener("keydown", function(e){
       if(e.key === "Enter") document.getElementById("btn").click();
